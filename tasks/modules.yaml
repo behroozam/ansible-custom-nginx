@@ -7,7 +7,7 @@
 - name: install nginx modules from git 
   git:
     repo: "{{ item.value.repo }}"
-    dest: "{{ custom_nginx_static_modules_directory }}"
+    dest: "{{ custom_nginx_static_modules_directory }}/item.value.name"
     version: "{{ item.value.version | default(master) }}"
   loop: "{{ custom_nginx_modules | dict2items }}"
   register: custom_nginx_modules
