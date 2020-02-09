@@ -65,6 +65,13 @@ custom_nginx_patches:
     dest_file: src/http/v2/ngx_http_v2.c
     patch_file: "roles/loadbalancer/files/nginx-patches/disable_h2c_table_update-{{ custom_nginx_version }}.patch"
     state: present
+# In this section you can download custom modules and compile them with nginx
+# Type: Dict  
+custom_nginx_modules:
+  install_nginx_module_vts:
+    repo: https://github.com/vozlt/nginx-module-vts.git
+    version: master #default value is master 
+
 
 # Build options
 # Type: List

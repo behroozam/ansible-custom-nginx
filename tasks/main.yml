@@ -34,6 +34,8 @@
 
 - include_tasks: patch.yml
 
+- include_tasks: modules.yaml
+
 - include_tasks: build.yml
 
 - include_tasks: make.yml
