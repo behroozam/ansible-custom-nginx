@@ -1,7 +1,13 @@
+- name: Create a directory if it does not exist
+  file:
+    path: "{{ custom_nginx_static_modules_directory }}"
+    state: directory
+    mode: '0755'
+
 - name: install nginx modules from git 
   git:
     repo: "{{ item.value.repo }}"
-    dest: "{{ custom_nginx_modules_directory }}"
+    dest: "{{ custom_nginx_static_modules_directory }}"
     version: "{{ item.value.version | default(master) }}"
   loop: "{{ custom_nginx_modules | dict2items }}"
   register: custom_nginx_modules

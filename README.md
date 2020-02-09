@@ -55,6 +55,7 @@ custom_nginx_prefix_directory: /usr/local/nginx
 custom_nginx_log_directory: /var/log/nginx
 custom_nginx_cache_directory: /var/cache/nginx
 custom_nginx_modules_directory: /usr/lib/nginx/modules
+custom_nginx_static_modules_directory: /usr/local/src/modules
 
 # In this section you can apply custom patches to nginx.
 # You can find one example below in this document, see 2.1)
@@ -115,6 +116,7 @@ custom_nginx_build_options:
   - "--with-stream_realip_module"
   - "--with-stream_ssl_module"
   - "--with-stream_ssl_preread_module"
+  - "--add-module={{custom_nginx_static_modules_directory}}/nginx-module-vts"
 ```
 
 ## Examples
