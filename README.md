@@ -25,7 +25,7 @@ All platform requirements are listed in the metadata file.
 ## Install
 
 ```sh
-ansible-galaxy install timorunge.custom_nginx
+ansible-galaxy install behroozam.custom_nginx
 ```
 
 ## Role Variables
