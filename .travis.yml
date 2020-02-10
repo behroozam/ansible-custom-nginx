@@ -1,6 +1,9 @@
 ---
 
-sudo: True
+os: linux
+
+env:
+  - ansible_version=2.7.7
 
 language: python
 
