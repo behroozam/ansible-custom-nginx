@@ -524,7 +524,7 @@ None
 
 [BSD 3-Clause "New" or "Revised" License](LICENSE)
 
-## Author Information
+## Authors Information
 
 - Timo Runge
 - Behrooz Hasanbeygi
