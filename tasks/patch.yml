@@ -1,6 +1,15 @@
 ---
 
-- name: Patch nginx source
+- name: Patch nginx source dir
+  patch:
+    basedir: "{{ custom_nginx_install_dir }}/build/nginx-{{ custom_nginx_version }}/{{ item.value.dest_file }}"
+    src: "{{ item.value.patch_file }}"
+    state: "{{ item.value.state | default(present) }}"
+  loop: "{{ custom_nginx_patches_dir | dict2items }}"
+  register: custom_nginx_patches_dir
+  when: custom_nginx_patches_dir is defined
+
+- name: Patch nginx source files
   patch:
     dest: "{{ custom_nginx_install_dir }}/build/nginx-{{ custom_nginx_version }}/{{ item.value.dest_file }}"
     src: "{{ item.value.patch_file }}"
