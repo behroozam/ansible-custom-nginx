@@ -66,6 +66,18 @@ custom_nginx_patches:
     dest_file: src/http/v2/ngx_http_v2.c
     patch_file: "roles/loadbalancer/files/nginx-patches/disable_h2c_table_update-{{ custom_nginx_version }}.patch"
     state: present
+
+# In this section you can apply custom patches to nginx basedir.
+# You can find one example below in this document, see 2.1)
+# Patches explained.
+# Type: Dict
+
+custom_nginx_patches_dir:
+  nginx_upstream_check_module_patch:
+    dest_file: ""
+    patch_file: roles/loadbalancer/files/nginx-patches/check_1.14.0+.patch
+    state: present
+    
 # In this section you can download custom modules and compile them with nginx
 # Type: Dict  
 custom_nginx_modules:
